@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="BarCodeLike.Details"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BarCodeLike"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid Margin="6,6,6,6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBox FontSize="16" HorizontalAlignment="Center" Name="uiNazwa" Margin="0,0,0,5"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="140"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="EAN" Tapped="uiRunScan_Clicked" Margin="0,0,5,0" VerticalAlignment="Center" />
+                <TextBox Grid.Column="1" Name="uiEAN"  />
+                <ComboBox Grid.Column="2" Name="uiOcena"  Margin="5,0,5,0">
+                    <ComboBoxItem Content="Neutral (0)" x:Uid="resDetailsNeutrum"/>
+                    <ComboBoxItem Content="Like (+)" x:Uid="resDetailsPlus" Background="LightGreen" />
+                    <ComboBoxItem Content="DisLike (-)" x:Uid="resDetailsMinus" Background="OrangeRed" />
+                </ComboBox>
+            </Grid>
+            <Button Name="uiDetailsScan" x:Uid="uiDetailsScan" Content="Scan" Click="uiRunScan_Clicked" Margin="5,5,5,5" Visibility="Collapsed" />
+            <TextBlock Name="uiAdded" />
+            <TextBlock Name="uiCountry" />
+        </StackPanel>
+        <!-- listview row=1, notatki kolejne - tylko ADD notatka, bez EDIT/REMOVE-->
+        <Button Grid.Row="2" HorizontalAlignment="Center" x:Uid="resDetailsSave" Content="Save" Margin="5,5,10,0" Click="uiSave_Click" />
+    </Grid>
+</Page>
