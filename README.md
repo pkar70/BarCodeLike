@@ -9,7 +9,7 @@ Primary version.
 
 
 # Privacy policy
- http://beskid.geo.uj.edu.pl/p/ms/barcode-privacy.htm
+ https://github.com/pkar70/BarCodeLike/wiki/Privacy-policy
 
 
 
